@@ -11,6 +11,24 @@
   <body>
     <h1 class="t-red">Service Worker</h1>
     <img src="/images/scene.jpg" alt="" width="300" />
+    <form class="form" action="./main.html" method="get">
+      <h3>登录网站</h3>
+      <p>
+        <label>用户名</label>
+        <input type="text" name="username" />
+      </p>
+      <p>
+        <label>密&ensp;&ensp;码</label>
+        <input type="password" name="password" />
+      </p>
+      <input
+        type="text"
+        name="from"
+        value="remember-me"
+        style="display: none"
+      />
+      <button id="btn" type="submit">登录</button>
+    </form>
     <script>
       function registerServiceWorker() {
         return navigator.serviceWorker
