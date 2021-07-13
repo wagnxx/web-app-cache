@@ -1,0 +1,10 @@
+CACHE MANIFEST
+#v0.0.1 change this to force update
+
+CACHE:
+
+permanote.js
+permanote.html
+
+NETWORK:
+note

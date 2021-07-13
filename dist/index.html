@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <title>Service Worker</title> -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/index.js"></script>
+  </head>
+  <body>
+    <h1 class="t-red">Service Worker</h1>
+    <img src="/images/scene.jpg" alt="">
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('/service-worker.js',{scope:'/'})
+          .then((reg) => {
+            console.log('Registration successded. Scop is ', reg.scope);
+          })
+          .catch((error) => {
+            console.log('Registration failed with ', error);
+          });
+      }
+    </script>
+  </body>
+</html>
