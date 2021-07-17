@@ -1,5 +1,3 @@
-
-
 window.addEventListener('load', () => {
   if (!('serviceWorker' in navigator)) {
     // Service Worker isn't supported on this browser, disable or hide UI.
@@ -18,19 +16,19 @@ window.addEventListener('load', () => {
     }
   }).then((result) => {
     if (result === 'granted') {
-      execute();
+      // execute();
     } else {
       console.log('no permission');
     }
   });
 });
 
-function execute() {
-  registerServiceWorker().then((registration) => {
-    registration.showNotification('Hello Wold!', {
-      body: 'Simple piece of body text.\nSecond line of body text :)',
-      icon: '/images/flag.jpg',
-      image: '/images/flag.jpg',
-    });
+async function execute() {
+  registration = await registerServiceWorker();
+
+  registration.showNotification('Hello Wold!', {
+    body: 'Simple piece of body text.\nSecond line of body text :)',
+    icon: '/images/flag.jpg',
+    image: '/images/flag.jpg'
   });
 }

@@ -9,10 +9,21 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <h1 class="t-red">Service Worker</h1>
+    <h1 class="t-red">Service Worker   凭证管理 API</h1>
     <img src="/images/scene.jpg" alt="" width="300" />
+    <form id="login-form">
+      <input name="name" type="text">
+      <input name="password" type="password">
+      <input type="submit" value="提交">
+  </form>
+  <button id="login-btn" data-provider="https://www.baidu.com">百度登录</button>
+  <button id="logout-btn">logout</button>
     <script>
+      let registration;
+
       function registerServiceWorker() {
+        if (registration) return registration;
+
         return navigator.serviceWorker
           .register('service-worker.js')
           .then((reg) => {
@@ -25,5 +36,6 @@
       }
     </script>
     <script defer src="/js/index.js"></script>
+    <script defer src="/js/credentials.js"></script>
   </body>
 </html>
